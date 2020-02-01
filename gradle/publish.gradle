@@ -47,25 +47,23 @@ publishing {
 
     repositories {
         maven {
-            url 'https://api.bintray.com/maven/transmode/gradle-plugins/gradle-docker'
+            url 'https://token.jfrog.io/token/'
             credentials {
-                username = bintrayUser
-                password = bintrayKey
+                username = artifactoryUser
+                password = artifactoryPassword
             }
         }
     }
+
 }
 
 artifactory {
     contextUrl = artifactoryUrl
-    resolve {
-        repoKey = "repo"
-    }
     publish {
         repository {
             repoKey = artifactoryRepo
-            username = bintrayUser
-            password = bintrayKey
+            username = artifactoryUser
+            password = artifactoryPassword
         }
         defaults {
             publications ('maven')

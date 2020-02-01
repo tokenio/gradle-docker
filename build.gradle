@@ -7,9 +7,10 @@ buildscript {
 }
 
 repositories {
-  maven { 
-      url = "http://jcenter.bintray.com"
-  }
+  mavenLocal()
+  jcenter()
+  maven { url "https://token.jfrog.io/token/public-gradle-plugins-local/" }
+  maven { url "http://jcenter.bintray.com" }
 }
 
 apply from: file('gradle/idea.gradle')
